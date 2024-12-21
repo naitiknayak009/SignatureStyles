@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signature Styles - Product Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        /* max-width: 1200px; */
+
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .product-container {
+        margin-top: 40px;
+        height: 100vh;
+        /* width: 100%; */
+        display: flex;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .product-image {
+        flex: 1;
+        padding: 30px;
+      }
+      .product-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+      .product-details {
+        flex: 1;
+        padding: 30px;
+      }
+      img.let {
+        height: 600px;
+      }
+      .product-title {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .product-price {
+        font-size: 2rem;
+        color: #000000;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .product-description {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .size-selector {
+        margin-bottom: 20px;
+      }
+      .size-selector label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .size-buttons {
+        display: flex;
+        padding: 10px;
+        gap: 10px;
+      }
+      .size-btn {
+        padding: 15px 25px;
+        border-radius: 10px;
+        border: 2px solid #000000;
+        background-color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 700;
+      }
+      .size-btn:hover,
+      .size-btn.active {
+        background-color: #e41010;
+        color: white;
+      }
+      .product-actions {
+        display: flex;
+        gap: 15px;
+      }
+      .btn {
+        padding: 20px 35px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      .btn-buy {
+        background-color: #e41010;
+        color: white;
+      }
+      .btn-cart {
+        background-color: #333;
+        color: white;
+      }
+      .btn:hover {
+        opacity: 0.9;
+        transform: scale(1.08);
+      }
+      .product-features {
+        margin-top: 20px;
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .product-features h3 {
+        margin-bottom: 10px;
+        font-weight: 700;
+        color: #333;
+      }
+      .product-features ul {
+        list-style-type: square;
+        padding-left: 20px;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: 800;
+      }
+
+      img.logo {
+        color: #161616;
+        margin-left: 30px;
+        text-decoration: none;
+      }
+
+      .imglogo {
+        height: 60px;
+        border-radius: 10px;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: right;
+        flex-grow: 2;
+        margin-left: 25px;
+      }
+
+      .menu-item {
+        color: #000000;
+        margin: 10px 25px;
+        text-decoration: none;
+      }
+
+      .button {
+        margin-left: 10px;
+        border: solid 2px black;
+        border-radius: 18px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .login-button {
+        padding: 12px 22px;
+        background-color: transparent;
+        color: rgb(0, 0, 0);
+        font-weight: 700;
+        transition: 0.3s ease;
+      }
+      .login-button:hover {
+        background-color: black;
+        color: white;
+      }
+      .footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+div.footer {
+  margin-top: 100px;
+  position: absolute;
+  width: 100%;
+  background-color: #000000;
+}
+
+.line {
+  height: 0.2px;
+  color: white;
+  margin-top: 5%;
+}
+
+div.end p {
+  margin-left: 35%;
+  color: #ffffff;
+}
+
+.tech-footer {
+  background-color: #000002;
+  color: #ffffff;
+  padding: 50px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1500px;
+  margin: 0 auto;
+  font-family: "Futura-bold";
+}
+
+.footer-column {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.footer-column h3,
+.footer-column h4 {
+  color: #e41010;
+  margin-bottom: 8px;
+}
+
+.footer-column ul {
+  list-style: none;
+  margin-top: 30px;
+  padding: 0;
+}
+
+.footer-column ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-top: 100px;
+}
+
+.footer-column ul li a:hover {
+  color: #4ecdc4;
+}
+
+.social-icons a {
+  color: #ffffff;
+  margin-right: 10px;
+  margin-top: 100px;
+  text-decoration: none;
+}
+
+.footer-column p {
+  font-size: 20px;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column h4 {
+  font-size: 20px;
+}
+
+.footer-column h3 {
+  font-size: 30px;
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo"><img class="imglogo" src="logo1.png" alt="" /></div>
+      <div class="menu">
+        <a href="product.html" class="menu-item">New Arrivals</a>
+        <a href="#contact" class="menu-item">Contact</a>
+        <a href="#contact" class="menu-item">Offers</a>
+        <a href="#contact" class="menu-item">Orders</a>
+        <a href="#about" class="menu-item">About</a>
+      </div>
+
+      <div>
+        <!-- <img src="./search.png" alt="" class="imgx"> -->
+        <button
+          class="button login-button"
+          onclick="location.href='login.html'"
+        >
+          Login/SignUp
+        </button>
+      </div>
+    </nav>
+    <div class="product-container">
+      <div class="product-image">
+        <img
+          class="let"
+          src="data:image/jpeg;base64,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"
+          alt="Signature Styles Jacket"
+        />
+      </div>
+      <div class="product-details">
+        <h1 class="product-title">Urban Chic Leather Jacket</h1>
+        <div class="product-price">₹5,999</div>
+
+        <div class="product-description">
+          A sleek and stylish leather jacket designed for the modern urban
+          professional. Crafted with premium quality leather and tailored for a
+          perfect fit.
+        </div>
+
+        <div class="size-selector">
+          <label>Select Size:</label>
+          <div class="size-buttons">
+            <button class="size-btn">S</button>
+            <button class="size-btn">M</button>
+            <button class="size-btn active">L</button>
+            <button class="size-btn">XL</button>
+          </div>
+        </div>
+
+        <div class="product-actions">
+          <button class="btn btn-buy">Buy Now</button>
+          <button class="btn btn-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-features">
+          <h3>Product Features</h3>
+          <ul>
+            <li>Premium Genuine Leather</li>
+            <li>Soft Inner Lining</li>
+            <li>YKK Zipper</li>
+            <li>Slim Fit Design</li>
+            <li>Machine Washable</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+     <footer class="tech-footer">
+         <div class="footer-container">
+             <div class="footer-column">
+                 <h3>Signature Style</h3>
+                 <p>Unique Designs. Uncompromising Quality.</p>
+             </div>
+
+             <div class="footer-column">
+                 <h4>Quick Links</h4>
+                 <ul>
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">Orders</a></li>
+                     <li><a href="#">About Us</a></li>
+                     <li><a href="#">Contact</a></li>
+                 </ul>
+             </div>
+
+             <div class="footer-column">
+                 <h4>Social Media Handles</h4>
+                 <div class="social-icons">
+                     <a href="#" class="icon-facebook">Facebook</a>
+                     <a href="#" class="icon-twitter">Twitter</a>
+                     <a href="#" class="icon-linkedin">LinkedIn</a>
+                 </div>
+             </div>
+
+            
+         </div>
+         <hr class="line">
+         <div class="end">
+             <p>Copyright notice: "© 2024 TeachToTech. All rights reserved</p>
+         </div>
+ </div>
+    <script>
+      document.querySelectorAll(".size-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".size-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+        });
+      });
+
+      document.querySelector(".btn-buy").addEventListener("click", () => {
+        alert("Proceeding to checkout!");
+      });
+
+      document.querySelector(".btn-cart").addEventListener("click", () => {
+        alert("Product added to cart!");
+      });
+    </script>
+  </body>
+</html>
